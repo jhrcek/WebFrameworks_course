@@ -106,13 +106,65 @@
           </div>
           <div class="col-xs-12 col-sm-2">
             <p style="padding:40px;"></p>
-            <a class="btn btn-warning btn-block"
-               data-toggle="tooltip" title="Or Call us at +852 12345678"
-               data-placement="bottom" href="#reserveform">Reserve Table</a>
+            <a class="btn btn-warning btn-block" data-toggle="modal" data-target="#reserveTable">Reserve Table</a>
           </div>
         </div>
       </div>
     </header>
+
+    <div id="reserveTable" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Reserve Table</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" id="reservation">
+              <div class="form-group">
+                <label for="numguests" class="col-sm-2 control-label">Number of Guests</label>
+                <div class="col-sm-10">
+                  <input id="numguests" type="radio" name="numguests" value="1"> 1
+                  <input type="radio" name="numguests" value="2"> 2
+                  <input type="radio" name="numguests" value="3"> 3
+                  <input type="radio" name="numguests" value="4"> 4
+                  <input type="radio" name="numguests" value="5"> 5
+                  <input type="radio" name="numguests" value="6"> 6
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="nonsmoking" class="col-sm-2 control-label">Section</label>
+                <div class="btn-group col-sm-6" role="group" aria-label="First group">
+                  <button id="nonsmoking" type="button" class="btn btn-success">Non-smoking</button>
+                  <button type="button" class="btn btn-danger">Smoking</button>
+                </div>
+              </div>
+              <div class="form-group has-feedback">
+                <label for="date" class="col-sm-2 control-label">Date and Time</label>
+                <div class="col-sm-4">
+                  <input type="text" class="form-control" id="date" name="date" placeholder="Date">
+                  <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+                </div>
+                <div class="col-sm-4">
+                  <input type="text" class="form-control" id="time" name="time" placeholder="Time">
+                  <span class="glyphicon glyphicon-time form-control-feedback"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-push-2 col-sm-2">
+                  <button type="submit" class="btn btn-primary">Reserve</button>
+                </div>
+              </div>
+            </form>
+            <div class="alert alert-warning alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <strong>Warning!</strong> Please <a href="tel:+85212345678" class="alert-link">call</a> us to reserve for more than six guests.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="container">
       <ol class="breadcrumb">
@@ -246,48 +298,6 @@
           </div>
         </div>
       </div>
-
-      <div class="row row-content">
-        <div class="col-xs-12 col-sm-3">
-          <p style="padding:20px;"></p>
-          <h3 class="heading-central">Reserve a Table</h3>
-        </div>
-        <div class="col-xs-12 col-sm-9">
-          <form class="form-horizontal" id="reservation">
-            <div class="form-group">
-              <label for="numguests" class="col-sm-2 control-label">Number of Guests</label>
-              <div class="col-sm-10">
-                <input id="numguests" type="radio" name="numguests" value="1"> 1
-                <input type="radio" name="numguests" value="2"> 2
-                <input type="radio" name="numguests" value="3"> 3
-                <input type="radio" name="numguests" value="4"> 4
-                <input type="radio" name="numguests" value="5"> 5
-                <input type="radio" name="numguests" value="6"> 6
-              </div>
-            </div>
-            <div class="form-group has-feedback">
-              <label for="date" class="col-sm-2 control-label">Date and Time</label>
-              <div class="col-sm-4">
-                <input type="text" class="form-control" id="date" name="date" placeholder="Date">
-                <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
-              </div>
-              <div class="col-sm-4">
-                <input type="text" class="form-control" id="time" name="time" placeholder="Time">
-                <span class="glyphicon glyphicon-time form-control-feedback"></span>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-push-2 col-sm-2">
-                <button type="submit" class="btn btn-primary">Reserve</button>
-              </div>
-            </div>
-          </form>
-          <div class="alert alert-warning alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <strong>Warning!</strong> Please <a href="tel:+85212345678" class="alert-link">call</a> us to reserve for more than six guests.
-          </div>
-        </div>
-      </div>
     </div><!-- container-->
 
     <footer class="row-footer">
@@ -335,10 +345,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-      });
-    </script>
   </body>
 </html>
